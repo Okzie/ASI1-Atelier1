@@ -44,7 +44,7 @@ $(document).ready(function(){
             contentType: 'application/json',
             success: function(data){
                 console.log(data);
-                window.location.href = "http://localhost/cards.html";
+                window.location.href = "http://localhost/card.html";
             },
             error: function(err){
                 console.log('Erreur:', err);
