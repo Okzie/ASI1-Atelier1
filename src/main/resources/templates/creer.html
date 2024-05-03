@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}">
+    <h1> THIS IS A DEFAULT HEADER</h1>
+</div>
+<form th:action="@{/addCard}"
+      th:object="${cardForm}" method="POST">
+    <fieldset >
+        <legend >Add your Card ! </legend>
+        <div >
+            <label for="form-name">Name</label>
+            <div >
+                <input id="form-name" type="text"
+                       placeholder="Card name..." th:field="*{name}">
+            </div>
+        </div>
+        <div >
+            <label  for="form-desc">Description</label>
+            <div >
+                <input  id="form-desc" type="text"
+                        placeholder="Card desc..." th:field="*{desc}">
+            </div>
+            <label  for="form-imgUrl">Image URL</label>
+            <div >
+                <input id="form-imgURL" type="text"
+                       placeholder="Image url..." th:field="*{imgURL}">
+            </div>
+            <label  for="form-family">Family</label>
+            <div >
+                <input  id="form-family" type="select"
+                        placeholder="Card family..." th:field="*{family}">
+                    <option>Family 1</option>
+                    <option>Family 2</option>
+                    <option>Family 2</option>
+                </input>
+            </div>
+            <label  for="form-affinity">Affinity</label>
+            <div >
+                <input  id="form-affinity" type="select"
+                        placeholder="Card affinity..." th:field="*{affinity}">
+                    <option>Affinity 1</option>
+                    <option>Affinity 2</option>
+                    <option>Affinity 3</option>
+                </input>
+            </div>
+            <label  for="form-HP">HP</label>
+            <div >
+                <input  id="form-HP" type="range"
+                        placeholder="Card HP..." th:field="*{HP}"
+                        min="0" max="100">
+            </div>
+            <label  for="form-Energy">Energy</label>
+            <div >
+                <input  id="form-Energy" type="range"
+                        placeholder="Card Energy..." th:field="*{Energy}"
+                        min="0" max="100">
+            </div>
+            <label  for="form-attack">Attack</label>
+            <div >
+                <input  id="form-attack" type="range"
+                        placeholder="Card attack..." th:field="*{attack}"
+                        min="0" max="100">
+            </div>
+            <label  for="form-defense">Defense</label>
+            <div >
+                <input  id="form-defense" type="range"
+                        placeholder="Card defense..." th:field="*{defense}"
+                        min="0" max="100">
+            </div>
+
+        </div>
+        <div >
+            <input type="submit"  class="uk-button uk-button-default" value="Create" />
+        </div>
+
+    </fieldset>
+</form>
+
+</body>
+
+</html>
