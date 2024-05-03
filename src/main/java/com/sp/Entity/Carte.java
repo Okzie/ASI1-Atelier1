@@ -1,15 +1,31 @@
 package com.sp.Entity;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Carte {
-    public String name;
-    public String description;
-    public String image;
-    public String family;
-    public String affinity;
-    public int hp;
-    public int energy;
-    public int attack;
-    public int defence;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String description;
+    private String image;
+    private String family;
+    private String affinity;
+    private int hp;
+    private int energy;
+    private int attack;
+    private int defence;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;
